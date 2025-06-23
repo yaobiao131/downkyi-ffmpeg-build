@@ -296,6 +296,12 @@ build_ffmpeg() {
 	fi
 
 	./configure "${FFMPEG_CONFIG[@]}" \
+		--disable-debug \
+		--disable-network \
+		--disable-autodetect \
+		--enable-small \
+		--disable-iconv \
+		--disable-parsers \
 		--prefix="${CROSS_PREFIX}" \
 		--pkg-config-flags="--static" \
 		--extra-cflags="${EXTRA_CFLAGS}" \
